@@ -15,4 +15,11 @@ A framework to improve coverage of single module designs by intelligent test vec
 - gpt_input.txt, gpt_feedback.txt, input_vectors.json, total_vectors.json, output.json.
 - cov_total folder which contains the files related to overall coverage like 'annotated-coverage' etc.
 
+# Folder Description
+## dut
+This contains: 
+(i) small designs- s01.sv to s07.sv
+(ii) medium designs- m01.sv to m07.sv
+(iii)large designs- b01.sv to b07.sv
+
  
