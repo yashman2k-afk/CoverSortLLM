@@ -1,13 +1,13 @@
 # CoverSortLLM
 A framework to improve coverage of single module designs by intelligent test vector generation using LLM.
 # Prequisites:
--CoverSort LLM will only work in linux environments hence install linux or WSL.
--Install python3, cpp, verilator tool in linux.
--Install pyverilog, json and libraries required for openai, sonar, deepseek, claude to work.
+- CoverSort LLM will only work in linux environments hence install linux or WSL.
+- Install python3, cpp, verilator tool in linux.
+- Install pyverilog, json and libraries required for openai, sonar, deepseek, claude to work.
 # To start:
-- extract the CoverSortLLM.zip file and change path to that folder in linux.
-- put the desired design from 'dut' folder into 'top.sv' file and remember the module name should be 'top_1' only.
-- set parameters related to design in maker.py code like design file path, description path, fsm.
+- Extract the CoverSortLLM.zip file and change path to that folder in linux.
+- Put the desired design from 'dut' folder into 'top.sv' file and remember the module name should be 'top_1' only.
+- Set parameters related to design in maker.py code like design file path, description path, fsm.
 - Use 'python3 maker.py' command in terminal to start the process.
 # Files generated which are important:
 - logs, rfuzz_harness.cpp and rfuzz_harness.h
