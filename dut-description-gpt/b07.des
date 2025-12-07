@@ -1,0 +1,8 @@
+This Verilog design is a 32-state finite state machine (FSM).
+It has two 4-bit inputs (in_a and in_b), a clock (clk), and an asynchronous reset (reset).
+The FSM outputs are a 5-bit register state (encoding states S0 to S31), and four flags: carry_flag, zero_flag, overflow_flag, and special_out.
+On reset, the FSM returns to state S0, and all flags are cleared.
+On each rising edge of the clock, the FSM transitions to a new state based on Boolean conditions involving in_a and in_b (AND, OR, XOR, and NOT).
+The carry_flag, zero_flag, and overflow_flag are computed combinationally from the inputs at every clock edge.
+The special_out signal is asserted in selected states (S20 and S31).
+Each state contains branching logic that may lead to another state or loop back, allowing traversal through all 32 states.

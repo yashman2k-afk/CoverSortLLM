@@ -1,0 +1,41 @@
+This Verilog design is a 16-state finite state machine (FSM).
+It has two binary inputs (input1, input2), a clock (clk), and an asynchronous reset (reset).
+The FSM output is a 4-bit register state, which encodes states S0 to S15.
+On reset, the FSM returns to S0.
+On each rising edge of the clock, the FSM transitions to a new state based on Boolean conditions involving input1 and input2 (AND, OR, and NOT).
+Due to high complexity only required state transition and design snippet is shown.
+
+# State-transition-path 
+Here’s a detailed explanation of each state transition to trigger // UNCOVERED BRANCH:
+- S0 → S1 for (1,1)
+- S0 → S2 for (0,1), (1,0), (0,0)
+- S1 → S3 for (0,1)
+- S1 → S4 for (0,0), (1,0), (1,1)
+- S2 → S5 for (1,0)
+- S2 → S6 for (0,0), (0,1), (1,1)
+- S3 → S7 for (0,0)
+- S3 → S8 for (0,1), (1,0), (1,1)
+- S4 → S9 for (0,1), (1,0), (1,1)
+- S4 → S10 for (0,0)
+- S5 → S11 for (0,0), (0,1), (1,1)
+- S5 → S12 for (1,0)
+- S6 → S13 for (0,0), (1,0), (1,1)
+- S6 → S14 for (0,1)
+- S7 → S15 for (0,0), (0,1), (1,0)
+- S7 → S0  for (1,1)
+- S8 → S1  for (1,1)
+- S8 → S2  for (0,0), (0,1), (1,0)
+- S9 → S3  for (0,1)
+- S9 → S4  for (0,0), (1,0), (1,1)
+- S10 → S5 for (1,0)
+- S10 → S6 for (0,0), (0,1), (1,1)
+- S11 → S7 for (0,0)
+- S11 → S8 for (0,1), (1,0), (1,1)
+- S12 → S9  for (0,1), (1,0), (1,1)
+- S12 → S10 for (0,0)
+- S13 → S11 for (0,0), (0,1), (1,1)
+- S13 → S12 for (1,0)
+- S14 → S13 for (0,0), (1,0), (1,1)
+- S14 → S14 for (0,1)
+- S15 → S15 for (0,0), (0,1), (1,0)
+- S15 → S0  for (1,1)

@@ -1,0 +1,10 @@
+This Verilog design is a 6-bit sequential Arithmetic Logic Unit (ALU).
+It has two 6-bit inputs (A_in, B_in), a 3-bit opcode_in, a clock (clk), and a synchronous reset (rst).
+The outputs are a 6-bit register result, and three flags: zero, carry, and overflow.
+
+On each rising edge of the clock, if reset is active, the registers are cleared.
+Otherwise, the inputs are latched, and the ALU updates its outputs in the next cycle.
+
+The ALU supports 8 operations (Addition, Subtraction, AND, OR, XOR, Shift Left, Shift Right, and Rotate Left) based on opcode_in signal 
+The zero flag is set when the result equals zero.
+The carry and overflow flags are only active for addition and subtraction.
