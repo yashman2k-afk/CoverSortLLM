@@ -1,0 +1,12 @@
+Requirements:
+Cover all possible FSM states (S0 to S31).
+Cover all state transitions according to the FSM logic and inputs (in_a and in_b).
+Cover asynchronous reset functionality.
+Cover the assertion of output flags (carry_flag, zero_flag, overflow_flag, special_out) in relevant states.
+States with identical next-state behavior may be grouped to create more concise cover properties.
+
+Additional Requirements:
+Use SystemVerilog cover property syntax (e.g., cover property).
+Do not modify the existing module logic.
+Strictly avoid covergroups and always blocks.
+Use concise style, leveraging $past(state) and $inside operators with event controls such as @(posedge clk) or @(posedge reset).

@@ -1,0 +1,18 @@
+Functional Requirements:
+Cover all FSM states: INIT, ANALISI_REQ, ASSEGNA.
+Cover all possible GRANT_O output values (0000, 1000, 0100, 0010, 0001).
+Cover input-to-output behavior: when a request (REQUEST1–REQUEST4) is active, the corresponding grant is produced.
+Optionally, cover internal registers (grant, coda0, ru*, fu*) that track requests and queue state to verify functional correctness.
+
+##### or######### also check optional thing#########
+Functional Requirements:
+Cover all possible GRANT_O output values corresponding to the 4 requests (U1, U2, U3, U4).
+Cover all possible state transitions (INIT, ANALISI_REQ, ASSEGNA).
+Cover the behavior of the request signals (REQUEST1–REQUEST4) and their effect on the grant outputs.
+Optionally, cover internal registers (grant, coda0, ru*, fu*) that track requests and queue state to verify functional correctness.
+
+Additional Requirements:
+Use Verilator’s cover property syntax.
+Do not modify the existing module logic.
+Strictly avoid covergroups and always blocks.
+Use concise style, leveraging $inside and event controls such as @(posedge clk).

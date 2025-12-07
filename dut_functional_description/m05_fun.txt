@@ -1,0 +1,11 @@
+Requirements:
+Cover all possible counter values (0 to 15) when the counter is enabled.
+Cover overflow condition when counting up (up_down = 1) and count reaches 15.
+Cover underflow condition when counting down (up_down = 0) and count reaches 0.
+Cover transitions when the counter is enabled in both counting directions (up_down = 1 or 0).
+
+Additional Requirements:
+Use Verilator’s cover property syntax.
+Do not modify the existing module logic.
+Strictly avoid covergroups and always blocks.
+Use concise style, leveraging $inside and event controls such as @(posedge clk).

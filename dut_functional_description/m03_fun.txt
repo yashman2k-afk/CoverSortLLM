@@ -1,0 +1,10 @@
+Requirements:
+Cover all possible output values of OUTP and OVERFLW.
+Cover all FSM state transitions between states (a, b, c, e, f, g, wf0, and wf1) according to inputs LINE1 and LINE2.
+Ensure functional coverage, not just input combinations.
+
+Additional Requirements:
+Use Verilator’s cover property syntax.
+Do not modify the existing module logic.
+Strictly avoid covergroups and always blocks.
+Use concise style, leveraging $inside and event controls such as @(posedge clk).

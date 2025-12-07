@@ -1,0 +1,10 @@
+Requirements:
+Cover all possible FSM states (S0 to S23).
+Cover all state transitions according to the FSM logic and inputs (input1 and input2).
+Cover reset functionality (FSM goes to S0 on reset).
+
+Additional Requirements:
+Use Verilator’s cover property syntax.
+Do not modify the existing module logic.
+Strictly avoid covergroups and always blocks.
+Use concise style, leveraging  $past(state), $inside and event controls such as @(posedge clk) or @(posedge reset).

@@ -1,0 +1,11 @@
+Requirements:
+Cover all possible output values(0 and 1) of U.
+Cover all state transitions according to the FSM logic and LINEA input.
+Ensure functional coverage, not just input combinations.
+
+Additional Requirements:
+Use Verilator’s cover property syntax.
+Do not modify the existing module logic.
+Strictly avoid covergroups and always blocks.
+Use concise style, leveraging $inside and event controls such as @(posedge clk).
+

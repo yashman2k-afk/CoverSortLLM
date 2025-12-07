@@ -1,0 +1,9 @@
+Requirements:
+1. Cover all possible count values (0 to 15)
+2. Cover overflow signal when count reaches max (15)
+3. Cover enable signal transitions (high and low)
+
+Additional requirements:
+1. Use Verilator's cover property syntax. Do not modify the existing module logic and strictly do not add covergroups and always blocks
+2. Please use things like 'inside', $fell, $rose so that code will be concise.
+3. Don't give any explanations, just add code.

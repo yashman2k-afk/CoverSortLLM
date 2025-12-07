@@ -1,0 +1,11 @@
+Requirements:
+Cover all FSM states: WAIT, GO, WARN, STOP.
+Cover all possible lights output values: RED, YELLOW, GREEN.
+Cover state transitions based on inputs.
+Cover output behavior: lights must reflect the state.
+
+Additional Requirements:
+Use Verilator’s cover property syntax.
+Do not modify the existing module logic.
+Strictly avoid covergroups and always blocks.
+Use concise style, leveraging $inside and event controls such as @(posedge clk).
