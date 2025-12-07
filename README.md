@@ -41,11 +41,35 @@ A framework to improve coverage of single module designs by intelligent test vec
   ```bash
   python3 maker.py
 
-# Files generated which are important:
-- logs, rfuzz_harness.cpp and rfuzz_harness.h
-- uncovered_lines.json(if coverage_type == line or functional ) and uncovered_signals.json
-- gpt_input.txt, gpt_feedback.txt, input_vectors.json, total_vectors.json, output.json.
-- cov_total folder which contains the files related to overall coverage like 'annotated-coverage' etc.
+# 📄 Generated Files
+
+After running the tool, several important files and folders are created:
+
+- **logs/**  
+  Contains all runtime logs and debug information.
+
+- **rfuzz_harness.cpp** and **rfuzz_harness.h**  
+  Auto-generated C++ harness files (used as Driver in testbench) for Verilator simulation and coverage feedback integration.
+
+- **Coverage Output Files**
+  - `uncovered_lines.json` — generated when `coverage_type` is set to `line` or `functional`.
+  - `uncovered_signals.json` — lists uncovered functional coverage points or signals.
+
+- **LLM Interaction Files**
+  - `gpt_input.txt` — prompt sent to the LLM.
+  - `gpt_feedback.txt` — LLM feedback received during iterative refinement.
+  - `input_vectors.json` — test vectors generated for the current iteration.
+  - `total_vectors.json` — cumulative test vectors across all iterations.
+  - `output.json` — final summarized output of the run.
+
+- **cov_total/**  
+  Directory containing all final coverage-related files, including:
+  - `annotated-coverage`
+  - Additional Verilator coverage reports
+  - Merged coverage summaries
+
+These files are essential for understanding coverage progress, LLM decisions, and simulation results.
+
 
 # 📁Folder Description
 ## `dut/`
