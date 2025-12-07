@@ -1,5 +1,7 @@
 # CoverSortLLM
 A framework to improve coverage of single module designs by intelligent test vector generation using LLM.
+![Block Diagram](Framework_5.png)
+
 # Prequisites:
 - CoverSortLLM will only work in linux environments hence install linux or WSL.
 - Install python3, cpp, verilator tool in linux.
