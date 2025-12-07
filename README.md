@@ -3,15 +3,44 @@ A framework to improve coverage of single module designs by intelligent test vec
 
 ![Block Diagram](Framework_5.png)
 
-# Prequisites:
-- CoverSortLLM will only work in linux environments hence install linux or WSL.
-- Install python3, cpp, verilator tool in linux.
-- Install pyverilog, json and libraries required for openai, sonar, deepseek, claude to work.
-# To start:
-- Extract the CoverSortLLM.zip file and change path to that folder in linux.
-- Put the desired design from 'dut' folder into 'top.sv' file and remember the module name should be 'top_1' only.
-- Set parameters related to design in maker.py code like design file path, description path, fsm.
-- Use 'python3 maker.py' command in terminal to start the process.
+# 🛠️ Prerequisites
+
+- **Linux Environment Required**  
+  CoverSortLLM works only on Linux-based systems. You can use either a native Linux installation or **WSL (Windows Subsystem for Linux)** on Windows.
+
+- **Install Required Tools**
+  - `python3`
+  - `g++` / `cpp` compiler
+  - `verilator`
+
+- **Install Required Python Libraries**
+  - `pyverilog`
+  - `json`
+  - Libraries for LLM integrations such as:
+    - `openai`
+    - `anthropic` (Claude)
+    - `sonar`
+    - `deepseek`
+# ▶️ Getting Started
+
+- **Extract the `CoverSortLLM.zip` file**  
+  Unzip the project and navigate to the extracted directory in your Linux environment.
+
+- **Select the DUT (Design Under Test)**  
+  Copy the desired design from the `dut/` folder into the `top.sv` file.  
+  **Important:** The module name inside `top.sv` must be **`top_1`**.
+
+- **Configure Parameters in `maker.py`**  
+  Update design-related settings such as:
+  - Design file path  
+  - Description file path  
+  - FSM parameter (set to 1 for large design set with fsm logics)
+
+- **Run the Tool**  
+  Start the process with:
+  ```bash
+  python3 maker.py
+
 # Files generated which are important:
 - logs, rfuzz_harness.cpp and rfuzz_harness.h
 - uncovered_lines.json(if coverage_type == line or functional ) and uncovered_signals.json
