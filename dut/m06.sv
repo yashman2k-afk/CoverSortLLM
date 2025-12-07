@@ -1,0 +1,111 @@
+module top_1(
+    input        clk,
+    input        rst,
+    input        REQUEST1, REQUEST2, REQUEST3, REQUEST4,
+    output reg [3:0] GRANT_O
+);
+
+    // State encoding and constants using localparam
+    localparam 
+        U1 = 3'b100,
+        U2 = 3'b010,
+        U3 = 3'b001,
+        U4 = 3'b111,
+        INIT = 2'b00,
+        ANALISI_REQ = 2'b01,
+        ASSEGNA = 2'b10;
+
+    reg [1:0] stato;
+    reg [2:0] coda0, coda1, coda2, coda3;
+    reg ru1, ru2, ru3, ru4, fu1, fu2, fu3, fu4;
+    reg [3:0] grant;
+
+    // Reset block instead of initial
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            stato   <= INIT;
+            coda0   <= 0;
+            coda1   <= 0;
+            coda2   <= 0;
+            coda3   <= 0;
+            ru1     <= 0; fu1 <= 0;
+            ru2     <= 0; fu2 <= 0;
+            ru3     <= 0; fu3 <= 0;
+            ru4     <= 0; fu4 <= 0;
+            grant   <= 0;
+            GRANT_O <= 0;
+        end else begin
+            case (stato)
+                INIT: begin
+                    ru1   <= REQUEST1;
+                    ru2   <= REQUEST2;
+                    ru3   <= REQUEST3;
+                    ru4   <= REQUEST4;
+                    stato <= ANALISI_REQ;
+                end
+
+                ANALISI_REQ: begin
+                    GRANT_O <= grant;
+
+                    if (ru1 && !fu1) begin
+                        coda3 <= coda2;
+                        coda2 <= coda1;
+                        coda1 <= coda0;
+                        coda0 <= U1;
+                    end else if (ru2 && !fu2) begin
+                        coda3 <= coda2;
+                        coda2 <= coda1;
+                        coda1 <= coda0;
+                        coda0 <= U2;
+                    end else if (ru3 && !fu3) begin
+                        coda3 <= coda2;
+                        coda2 <= coda1;
+                        coda1 <= coda0;
+                        coda0 <= U3;
+                    end else if (ru4 && !fu4) begin
+                        coda3 <= coda2;
+                        coda2 <= coda1;
+                        coda1 <= coda0;
+                        coda0 <= U4;
+                    end
+
+                    fu1 <= ru1;
+                    fu2 <= ru2;
+                    fu3 <= ru3;
+                    fu4 <= ru4;
+
+                    stato <= ASSEGNA;
+                end
+
+                ASSEGNA: begin
+                    if (fu1 || fu2 || fu3 || fu4) begin
+                        case (coda0)
+                            U1: grant <= 4'b1000;
+                            U2: grant <= 4'b0100;
+                            U3: grant <= 4'b0010;
+                            U4: grant <= 4'b0001;
+                            default: grant <= 4'b0000;
+                        endcase
+                        coda0 <= coda1;
+                        coda1 <= coda2;
+                        coda2 <= coda3;
+                        coda3 <= 3'b000;
+                    end
+
+                    ru1   <= REQUEST1;
+                    ru2   <= REQUEST2;
+                    ru3   <= REQUEST3;
+                    ru4   <= REQUEST4;
+
+                    stato <= ANALISI_REQ;
+                end
+                // verilator coverage_off
+                default: begin
+                    stato <= INIT;
+                    GRANT_O <= 4'b0000;
+                end
+                // verilator coverage_on
+            endcase
+        end
+    end
+endmodule
