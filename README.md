@@ -15,11 +15,19 @@ A framework to improve coverage of single module designs by intelligent test vec
 - gpt_input.txt, gpt_feedback.txt, input_vectors.json, total_vectors.json, output.json.
 - cov_total folder which contains the files related to overall coverage like 'annotated-coverage' etc.
 
-# Folder Description
-## dut
-This contains: 
-(i) small designs- s01.sv to s07.sv
-(ii) medium designs- m01.sv to m07.sv
-(iii)large designs- b01.sv to b07.sv
+# 📁Folder Description
+## `dut/`
+
+This directory includes all Design Under Test (DUT) files used in our experiments.  
+The designs are grouped by complexity:
+
+| Category | Files |
+|---------|-------|
+| **Small** | `s01.sv` – `s07.sv` |
+| **Medium** | `m01.sv` – `m07.sv` |
+| **Large** | `b01.sv` – `b07.sv` |
+
+Each file contains a standalone SystemVerilog module representing a combinational or sequential logic block of varying complexity.
+
 
  
