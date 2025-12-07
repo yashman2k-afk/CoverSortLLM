@@ -1,7 +1,7 @@
 # CoverSortLLM
 A framework to improve coverage of single module designs by intelligent test vector generation using LLM.
 # Prequisites:
-- CoverSort LLM will only work in linux environments hence install linux or WSL.
+- CoverSortLLM will only work in linux environments hence install linux or WSL.
 - Install python3, cpp, verilator tool in linux.
 - Install pyverilog, json and libraries required for openai, sonar, deepseek, claude to work.
 # To start:
