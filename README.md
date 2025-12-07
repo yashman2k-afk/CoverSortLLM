@@ -1,5 +1,6 @@
 # CoverSortLLM
-A framework to improve coverage of single module designs by intelligent test vector generation using LLM.
+A framework to improve coverage of single module designs by intelligent test vector generation using LLM. Below figure shows the architechture:
+
 ![Block Diagram](Framework_5.png)
 
 # Prequisites:
