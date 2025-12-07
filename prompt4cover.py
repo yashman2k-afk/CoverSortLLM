@@ -6,8 +6,8 @@ import openai
 import json
 import re
 
-PERPLEXITY_API_KEY = "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"  # Replace with your actual API key
-OPENAI_API_KEY = "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"
+PERPLEXITY_API_KEY = " "  # Replace with your actual API key
+OPENAI_API_KEY = " "
 CLAUDE_API_KEY = " "
 DEEPSEEK_API_KEY = " "
 from JSON_update import append_block_to_total_vectors
